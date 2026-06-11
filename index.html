@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP ресурс</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Экран авторизации -->
+        <img src="image/icons.png" alt="Введение в PHP" class="icon-im">
+        <div id="auth-screen" class="screen active">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Вход</button>
+                    <button class="tab-btn" data-tab="register">Регистрация</button>
+                </div>
+
+                <!-- Форма входа -->
+                <form id="login-form" class="auth-form active">
+                    <h2>Вход в систему</h2>
+                    <div class="form-group">
+                        <label for="login-email">Email:</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Пароль:</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                    
+                </form>
+
+                <!-- Форма регистрации -->
+                <form id="register-form" class="auth-form">
+                    <h2>Регистрация</h2>
+                    <div class="form-group">
+                        <label for="register-name">Имя:</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email:</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Пароль:</label>
+                        <input type="password" id="register-password" minlength="6" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Основной экран приложения -->
+        <div id="main-screen" class="screen">
+            <header>
+                <div class="header-content">
+                    <h1>📚 Учебник PHP</h1>
+                    <div class="user-info">
+                        <span id="user-name">Пользователь</span>
+                        <button id="logout-btn" class="btn btn-outline">Выйти</button>
+                    </div>
+                </div>
+                <nav>
+                    <button class="nav-btn active" data-target="lessons">Уроки</button>
+                    <button class="nav-btn" data-target="tests">Тесты</button>
+                    <button class="nav-btn" data-target="practice">Практика</button>
+                    <button class="nav-btn" data-target="progress">Прогресс</button>
+                    <button class="nav-btn" data-target="profile">Профиль</button> 
+                </nav>
+            </header>
+
+            <main>
+                <!-- Раздел с уроками -->
+                <section id="lessons" class="content-section active">
+                    <div class="sidebar">
+                        <h3>Содержание</h3>
+                        <ul class="lesson-list">
+                            <li><a href="#" class="lesson-link active" data-lesson="1">Введение в PHP</a></li>
+                            <li><a href="#" class="lesson-link" data-lesson="2">Синтаксис и переменные</a></li>
+                            <li><a href="#" class="lesson-link" data-lesson="3">Условные операторы</a></li>
+                            <li><a href="#" class="lesson-link" data-lesson="4">Циклы</a></li>
+                            <li><a href="#" class="lesson-link" data-lesson="5">Функции</a></li>
+                            <li><a href="#" class="lesson-link" data-lesson="6">Генераторы</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lesson-content">
+                        <div id="lesson-1" class="lesson active">
+                            <h2>Введение в PHP</h2>
+                            <img src="image/php.png" alt="Введение в PHP" class="lesson-image">
+                            <div class="lesson-meta">
+                                <span class="difficulty easy">Для начинающих</span>
+                            </div>
+                            <p><strong>PHP</strong> (Hypertext Preprocessor) - это популярный язык программирования общего назначения с открытым исходным кодом, который особенно подходит для веб-разработки. Он был создан в 1994 году Расмусом Лердорфом и с тех пор стал одним из самых популярных языков для веб-разработки.</p>
+                            
+                            <h3>Что такое PHP?</h3>
+                            <ul>
+                                <p><strong> – </strong>Серверная обработка: PHP выполняется на сервере, генерируя HTML-код, который отправляется клиенту (браузеру). Это позволяет создавать интерактивные и динамические сайты.</p>
+                                <p><strong> – </strong>Интеграция с HTML: PHP легко вставляется в HTML-код, что делает его удобным для разработки веб-страниц.</p>
+                                <p><strong> – </strong>Кроссплатформенный: работает на Windows, Linux, macOS.</p>
+                                <p><strong> – </strong>Большая библиотека функций: В PHP встроено множество функций для работы с файлами, строками, датами, сессиями, куки и другими задачами.</p>
+                            </ul>
+
+                            <div class="code-example">
+                                <h4>Первый скрипт PHP:</h4>
+                                <pre><code>&lt;?php
+    echo "Привет, мир!";
+?&gt;</code></pre>
+                                
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <p>Этот код выводит на страницу сообщение "Привет, мир!".</p><br>
+                            <p>PHP широко используется для разработки сайтов, интернет-магазинов, форумов, блогов и других веб-приложений благодаря своей простоте, гибкости и богатому функционалу.</p> 
+                            <br><br>
+                             <button class="btn btn-success complete-lesson" data-lesson="1">Отметить как пройденное</button> 
+                        </div>
+
+                        <div id="lesson-2" class="lesson">
+                            <h2>Синтаксис и переменные</h2>
+                            <!-- <img src="https://via.placeholder.com/800x400/2196F3/white?text=PHP+Variables" alt="Переменные в PHP" class="lesson-image">-->
+                            <div class="lesson-meta">
+                                <span class="difficulty easy">Для начинающих</span>
+                            </div>
+                            
+                            <h3>Основы синтаксиса</h3>
+                            <p>Код PHP заключается в специальные теги: <code>&lt;?php ... ?&gt;</code> или короткий тег <code>&lt;? ... ?&gt;</code>.Но короткий тег не всегда поддерживается по умолчанию, лучше использовать <code>&lt;?php ... ?&gt;</code>.</p>
+                            <p>Комментарии в PHP имеют несколько форм. Они не выполняются сервером и служат для пояснения кода:</p>
+
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+    // Однострочный комментарий
+
+# Также однострочный комментарий 
+
+/*
+Многострочный
+комментарий
+*/
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            
+                            <h3>Переменные</h3>
+                            <p>В PHP переменные начинаются со знака доллара <code>$</code> и являются контейнерами для хранения данных. PHP - язык с динамической типизацией, что означает: вам не нужно объявлять тип переменной перед её использованием. </p>
+                            
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+    $name = "Иван";
+    $age = 25;
+    $isStudent = true;
+    
+    echo "Меня зовут " . $name . ", мне " . $age . " лет";
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div><br>
+
+                            <h3>Основные типы данных в PHP включают:</h3>
+                             <img src="image/tabl.png" alt="Условные операторы" class="lesson-image"> <br><br>
+
+                             <p>PHP также поддерживает константы - значения, которые не могут изменяться после определения:</p>
+
+                             <div class="code-example">
+                                <pre><code>&lt;?php
+define("SITE_NAME", "My PHP Website");
+echo SITE_NAME; // Выведет: My PHP Website
+
+// Константы не используют знак $
+// Константы доступны глобально
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div> <br>
+
+                            <h3>При работе с переменными стоит помнить эти ключевые моменты:</h3>
+                            <p><strong> – </strong>Имя переменной может содержать буквы, цифры и знаки подчеркивания.</p>
+                            <p><strong> – </strong>Имя переменной должно начинаться с буквы или знака подчеркивания (не с цифры).</p>
+                            <p><strong> – </strong>Необходимо использовать функцию var_dump() для проверки типа и значения переменной.</p>
+                            <p><strong> – </strong>Переменные PHP чувствительны к регистру - $name и $Name это разные переменные.</p>
+                            <br><br>
+                              <button class="btn btn-success complete-lesson" data-lesson="2">Отметить как пройденное</button>  
+                        </div>
+
+                        <div id="lesson-3" class="lesson">
+                            <h2>Условные операторы</h2>
+                           <!-- <img src="https://via.placeholder.com/800x400/FF9800/white?text=PHP+Conditions" alt="Условные операторы" class="lesson-image">-->
+                            <div class="lesson-meta">
+                                <span class="difficulty easy">Для начинающих</span>
+                            </div>
+                            <p>Условные операторы позволяют выполнять различные блоки кода в зависимости от условий, а циклы обеспечивают повторное выполнение кода - это основа алгоритмического мышления в PHP.</p><br>
+                            <p>Оператор <strong>if-else</strong> позволяет выполнить определенный код при выполнении условия:</p>
+                            
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+    $temperature = 20;
+    
+    if ($temperature > 25) {
+        echo "Жарко!";
+    } elseif ($temperature > 15) {
+        echo "Тепло";
+    } else {
+        echo "Прохладно";
+    }
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div><br>
+
+                            <p>Оператор <strong>switch</strong> представляет собой альтернативу множественным условиям if-else:</p>
+
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+$dayOfWeek = 3;
+
+switch ($dayOfWeek) {
+case 1:
+echo "Понедельник";
+break;
+case 2:
+echo "Вторник";
+break;
+case 3:
+echo "Среда";
+break;
+case 4:
+echo "Четверг";
+break;
+case 5:
+echo "Пятница";
+break;
+case 6:
+case 7:
+echo "Выходной";
+break;
+default:
+echo "Неверный день недели";
+}
+// Выведет: Среда
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div><br>
+
+                            <p>Цикл <strong>for</strong> идеален, когда вы знаете, сколько раз нужно выполнить блок кода:</p>
+
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+for ($i = 1; $i <= 5; $i++) {
+echo "Номер: $i <br>";
+}
+/* Выведет:
+Номер: 1
+Номер: 2
+Номер: 3
+Номер: 4
+Номер: 5
+*/
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div><br>
+
+                            <p>Цикл <strong>while</strong> выполняется, пока указанное условие истинно:</p>
+
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+$counter = 1;
+while ($counter <= 5) {
+echo "Счетчик: $counter <br>";
+$counter++;
+}
+/* Выведет:
+Счетчик: 1
+Счетчик: 2
+Счетчик: 3
+Счетчик: 4
+Счетчик: 5
+*/
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div><br>
+
+                            <p>Цикл <strong>do-while</strong> похож на while, но гарантирует выполнение блока кода хотя бы один раз:</p>
+
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+$num = 1;
+do {
+echo "Число: $num <br>";
+$num++;
+} while ($num <= 5);
+/* Выведет:
+Число: 1
+Число: 2
+Число: 3
+Число: 4
+Число: 5
+*/
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div><br>
+
+                            <p>Цикл <strong>foreach</strong> специально разработан для перебора массивов:</p>
+
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+$colors = array("red", "green", "blue");
+
+// Простой перебор элементов
+foreach ($colors as $color) {
+echo "Цвет: $color <br>";
+}
+/* Выведет:
+Цвет: red
+Цвет: green
+Цвет: blue
+*/
+
+// Перебор с ключами
+$person = array(
+"name" => "John",
+"age" => 30,
+"city" => "New York"
+);
+
+foreach ($person as $key => $value) {
+echo "$key: $value <br>";
+}
+/* Выведет:
+name: John
+age: 30
+city: New York
+*/
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div><br>
+
+                            <h3>PHP предлагает несколько операторов для управления ходом выполнения цикла:</h3>
+                            <p><strong> – break</strong> - немедленно завершает выполнение цикла;</p>
+                            <p><strong>– continue</strong> - пропускает текущую итерацию и переходит к следующей;</p>
+                            <p><strong>– return</strong> - выходит из функции (может использоваться внутри цикла);</p>
+                            <p><strong>– goto</strong> - переходит к определенной метке (использовать с осторожностью).</p><br>
+
+                            <p>Пример использования операторов <strong>break</strong> и <strong>continue</strong>:</p>
+
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+for ($i = 1; $i <= 10; $i++) {
+// Пропустить нечетные числа
+if ($i % 2 != 0) {
+continue;
+}
+
+echo "Число $i <br>";
+
+// Остановить цикл, когда достигнем 6
+if ($i == 6) {
+echo "Достигнут предел!";
+break;
+}
+}
+/* Выведет:
+Число 2
+Число 4
+Число 6
+Достигнут предел!
+*/
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <br><br>
+                              <button class="btn btn-success complete-lesson" data-lesson="3">Отметить как пройденное</button> 
+                        </div>
+
+                        <div id="lesson-4" class="lesson">
+                            <h2>Циклы</h2>
+                           <!-- <img src="https://via.placeholder.com/800x400/9C27B0/white?text=PHP+Loops" alt="Циклы в PHP" class="lesson-image">-->
+                            <div class="lesson-meta">
+                                <span class="difficulty intermediate">Средний уровень</span>
+                            </div>
+                            <p>Для совершения повторяемых действий в PHP, как и в других языках программирования, используются циклы. В PHP имеются следующие виды циклов:</p>
+                            <p><strong>– for</strong> - цикл выполняется через блок кода заданное количество раз;</p>
+                            <p><strong>– while</strong> - цикл выполняется через блок кода, если заданное условие истинно;</p>
+                            <p><strong>– do..while</strong> - цикл выполняется через блок кода один раз, а затем повторяет цикл если заданное условие истинно;</p>
+                            <p><strong>– foreach </strong> - цикл выполняется через блок кода для каждого элемента массива.</p><br>
+
+                            <h3>Цикл for</h3>
+                            <p>Цикл <strong>for</strong> имеет следующее формальное определение:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+    for ([инициализация счетчика]; [условие]; [изменение счетчика])
+{
+    // действия
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+
+                            <p>Стандартный цикл <strong>for</strong>:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+   for ($i = 1; $i < 10; $i++)
+{
+    echo "Квадрат числа $i равен " . $i * $i . "<br/>";
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div> 
+                            <p><i>Первая часть</i> объявления цикла - <strong>$i = 1</strong> - создает и инициализирует счетчик - переменную <strong>$i</strong>. И перед выполнением цикла его значение будет равно 1. По сути это то же самое, что и объявление переменной. <br>
+                            <i>Вторая часть</i> - <strong>$i < 10</strong>; - условие, при котором будет выполняться цикл. В данном случае цикл будет выполняться, пока <strong>$i</strong> не достигнет <strong>10</strong>. <br>
+                            <i>Третья часть</i> - <strong>$i++</strong> - изменение счетчика на единицу. Опять же нам необязательно увеличивать на единицу. Можно уменьшать: $i--. Или, например, увеличить не на 1, на 3: <strong>$i +=3</strong>. <br>
+                            В итоге блок цикла сработает 9 раз, пока значение $i не станет равным 10. И каждый раз это значение будет увеличиваться на 1. Каждое отдельное повторение цикла называется <strong>итерацией</strong>. Таким образом, в данном случае произойдет 9 итераций.</p> <br>
+
+                            <h3>Цикл while</h3>
+                            <p>Цикл <strong>while</strong> проверяет истинность некоторого условия, и если условие истинно, то выполняются блок выражений цикла:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+$counter = 1;
+while($counter<10)
+{
+    echo $counter * $counter . "<br />";
+    $counter++;
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <p>Если в блоке <strong>while</strong> всего одна инструкция, то фигурные скобки блока можно опустить:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+$counter = 0;
+while(++$counter<10)
+    echo $counter * $counter . "<br />";
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <p>Также можно применять альтернативный синтаксис, при котором вместо открывающей фигурной скобки ставится двоеточие, а вместо закрывающей фигурной скобки - ключевое слово <strong>endwhile</strong>:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+$counter = 1;
+while($counter<10):
+    echo $counter * $counter . "<br />";
+    $counter++;
+endwhile;
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div><br>
+
+                            <h3>Цикл do..while</h3>
+                            <p>Цикл <strong>do..while</strong> похож на цикл <strong>while</strong>, только теперь выполняется блок цикла, и только потом выполняется проверка условия. То есть даже если условие ложно, то блок цикла выполнится как минимум один раз:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+$counter = 1;
+do
+{
+    echo $counter * $counter . "<br />";
+    $counter++;
+}
+while($counter<10)
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div><br>
+
+                            <h3>Цикл foreach</h3>
+                            <p>Если индексы определяются вручную и отличаются они от соседних индексов не на единицу, а на произвольную величину. В этом случае мы можем использовать специальный цикл - <strong>foreach</strong>:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+$users = [1 => "Tom", 4 => "Sam", 5 => "Bob", 21 => "Alice"];
+foreach($users as $element)
+{
+    echo "$element<br />";
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <p>В цикле <strong>foreach</strong> из массива последовательно извлекаются все элементы, и их значение помещается в переменную, указанную после ключевого слова <strong>as</strong>. В данном случае в переменную $element по очереди помещаются все четыре значения из массива $users. Когда будет извлечен последний элемент из массива, цикл завершается.</p><br>
+                            <p>Цикл <strong>foreach</strong> позволяет извлекать не только значения, но и ключи элементов:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+$users = [1 => "Tom", 4 => "Sam", 5 => "Bob", 21 => "Alice"];
+foreach($users as $key => $value)
+{
+    echo "$key - $value<br />";
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <p>Здесь при переборе элементов цикла в переменную $key будет передаваться ключ элемента, а в переменную $value - его значение.</p>
+
+                            <br><br>
+                            <button class="btn btn-success complete-lesson" data-lesson="4">Отметить как пройденное</button>
+                        </div>
+
+                        <div id="lesson-5" class="lesson">
+                            <h2>Функции</h2>
+                            <!-- <img src="https://via.placeholder.com/800x400/607D8B/white?text=PHP+Functions" alt="Функции в PHP" class="lesson-image">-->
+                            <div class="lesson-meta">
+                                <span class="difficulty intermediate">Средний уровень</span>
+                            </div>
+
+                            <p><strong>Функция</strong> - это блок операторов, которые могут использоваться повторно в программе. Функция не будет выполняться сразу при загрузке страницы,она будет выполняться при вызове функции.</p>
+                            <p>Общий синтаксис определения функции выглядит следующим образом:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+    function имя_функции([параметр [, ...]])
+{
+    // Инструкции
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <p>Определение функции начинается с ключевого слова <strong>function</strong>, за которым следует имя функции. Имя функции должно начинаться с алфавитного символа или подчеркивания, за которыми может следовать любое количество алфавитно-цифровых символов или символов подчеркивания.
+После имени функции в скобках идет перечисление параметров. Даже если параметров у функции нет, то просто идут пустые скобки. Затем в фигурных скобках идет тело функции, содержащее набор инструкций.</p>
+                                
+<br>
+                                <p>Простейшая функция:</p>
+                                <div class="code-example">
+                                <pre><code>&lt;?php
+    function hello()
+{
+    echo "Hello PHP";
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+
+                            <p>Данная функция назывется hello. Она не имеет параметров, поэтому после названия функции идут пустые скобки. Блок функции содержит только одну инструкцию, которая выводит сообщение "Hello PHP".
+Чтобы функция сработала, её необходимо вызвать. Для вызова функции указывается её имя, после которого в скобках идут значения для её параметров (если, кончено, она имеет параметры):</p>
+                                <p><strong>название_функции (значения_для_параметров_функции);</strong></p>
+<br>
+                            <p>Например, вызовем вышеопределенную функцию hello:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+function hello()
+{
+    echo "Hello PHP";
+}
+ 
+hello();    // вызов функции
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <p>Поскольку для функции hello мы не определили никаких параметров, то при её вызове указываем название функции и после нее пустые круглые скобки. Заканчивается вызов функции точкой с запятой.</p>
+<br>
+                            <p>Преимуществом функций является то, что, определив однажды, мы можем многократно их вызывать в различных частях программы:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+function hello()
+{
+    echo "Hello PHP";
+}
+hello();
+hello();
+hello();
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+
+                            <p>Стоит отметить, что в данном случае сначала определяется функция, а затем она вызывается. Но мы также можно сделать наоборот:</p>
+                           <div class="code-example">
+                                <pre><code>&lt;?php
+hello();    // вызов функции
+ 
+function hello()
+{
+    echo "Hello PHP";
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+
+                            <p>Тем не менее есть исключения. В частности, при определении функции при определенном условии.</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+// hello();     // здесь будет ошибка
+ 
+if(true){   
+    function hello()
+    {
+        echo "Hello PHP";
+    }
+ 
+    hello();
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+
+                            <br><br>
+                            <button class="btn btn-success complete-lesson" data-lesson="5">Отметить как пройденное</button>
+                        </div>
+
+                        <div id="lesson-6" class="lesson">
+                            <h2>Генераторы</h2>
+                            <!-- <img src="https://via.placeholder.com/800x400/795548/white?text=PHP+Forms" alt="Работа с формами" class="lesson-image">-->
+                            <div class="lesson-meta">
+                                <span class="difficulty intermediate">Средний уровень</span>
+                            </div>
+                            
+                            <p><strong>Генератор</strong> предоставляет функцию, которая генерирует набор значений.
+Для возвращения значения из функции применяется оператор <strong>yield</strong>. Но в отличие от <strong>return</strong> оператор <strong>yield</strong> сохраняет состояние функции, позволяя ей продолжать работу с того места, когда остановилось ее выполнение.
+
+Например, определим простейшую функцию генератора:</p>
+                                <div class="code-example">
+                                <pre><code>&lt;?php
+    function generator(){
+     
+    yield 21;
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <p>Здесь функция генератора фактически возвращает только одно число 21. Тем не менее мы можем перебирать результат функции генератора в цикле как стандартный массив:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+foreach(generator() as $number)
+{
+    echo $number; // 21
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <br>
+                            <p>Подобным образом генератор может возвращать и большее количество значений:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+function generateNumbers()
+{
+    for ($i = 0; $i <= 5; $i++) {
+         
+        yield $i;
+    }
+}
+foreach(generateNumbers() as $number)
+{
+    echo $number; // 012345
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+
+                            <p>В данном случае функция генератора <strong>generateNumbers()</strong> с помощью цикла генерирует значения от 0 до 5 включительно. Это все равно, если бы написали:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+function generateNumbers()
+{
+    for ($i = 0; $i <= 5; $i++) {
+         
+        yield $i;
+    }
+}
+foreach(generateNumbers() as $number)
+{
+    echo $number; // 012345
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+<br>
+                            <p>При переборе в цикле мы фактически перебираем результат функции как обычный массив, каждый элемент которого имеет числовой индекс, начиная с нуля:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+function generateNumbers()
+{
+    for ($i = 10; $i <= 15; $i++) {
+         
+        yield $i;
+    }
+}
+ 
+foreach(generateNumbers() as $index => $number)
+{
+    echo "$index - $number<br/>"; // 012345
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <br>
+                            <p>С помощью оператора <strong>from</strong> можно определять массив - источник данных для генератора:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+function generateNumbers()
+{
+    yield 1;
+    yield from [2, 3, 4];
+    yield 5;
+}
+ 
+foreach(generateNumbers() as $number)
+{
+    echo $number; // 12345
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <p>В данном случае функция <strong>generateNumbers()</strong> для генерации часть данных берет из массива [2, 3, 4] с помощью выражения yield from [2, 3, 4].</p>
+<br>
+                            <p>Функция генератора, как и любая функция может принимать параметры, что позволяет настраивать поведение генератора:</p>
+                             <div class="code-example">
+                                <pre><code>&lt;?php
+function generateNumbers($start, $end)
+{
+    for($i = $start; $i < $end; $i++){
+        yield $i;
+    }
+}
+foreach(generateNumbers(4, 9) as $number)
+{
+    echo $number; // 45678
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <br>
+                            <p>Но естественно может возникнуть вопрос: а зачем нужны генераторы? Разве мы не можем с тем же успехом перебират обычный массив? Например:</p>
+                            <div class="code-example">
+                                <pre><code>&lt;?php
+$numbers = [1, 2, 3, 4, 5];
+foreach($numbers as $number)
+{
+    echo $number; // 12345
+}
+?&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Копировать код</button>
+                            </div>
+                            <p>Дело в том, что при работе с массивом весь массив загружается в память. При небольших объемах проблема может быть игнорироваться. Но чем больше размер массива, соответственно тем больше издержки и потери в производительности. Именно эту проблему и призваны решить генераторы, которые извлекают только одно значение одномоментно при обращении к функции, экономя тем самым вычислительные ресурсы.</p>
+
+                            <br><br>
+                            <button class="btn btn-success complete-lesson" data-lesson="6">Отметить как пройденное</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Раздел с тестами -->
+                <section id="tests" class="content-section">
+                    <div class="test-container">
+                        <h2>Тестирование знаний PHP</h2>
+                        <div class="tests-grid">
+                            <div class="test-card" data-test="1">
+                                <h3>Основы PHP</h3>
+                                <p>5 вопросов · Для начинающих</p>
+                                <div class="test-score">Лучший результат: <span id="test1-score">0%</span></div>
+                                <button class="btn btn-primary start-test">Начать тест</button>
+                            </div>
+                            <div class="test-card" data-test="2">
+                                <h3>Переменные и типы данных</h3>
+                                <p>6 вопросов · Средний уровень</p>
+                                <div class="test-score">Лучший результат: <span id="test2-score">0%</span></div>
+                                <button class="btn btn-primary start-test">Начать тест</button>
+                            </div>
+                        </div>
+
+                        <!-- Контейнер для активного теста -->
+                        <div id="active-test" class="active-test" style="display: none;">
+                            <!-- Сюда будет загружаться активный тест -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Раздел практики -->
+                <section id="practice" class="content-section">
+                    <div class="practice-container">
+                        <h2>Практические задания</h2>
+                        
+                        <div class="practice-types">
+                            <div class="practice-type-card active" data-type="compiler">
+                                <h3>🖥️ Онлайн компилятор</h3>
+                                <p>Напишите и протестируйте PHP код</p>
+                            </div>
+                            <div class="practice-type-card" data-type="exercises">
+                                <h3>💪 Интерактивные задания</h3>
+                                <p>Задачи с автоматической проверкой</p>
+                            </div>
+                            
+                            <div class="practice-type-card" data-type="challenges">
+                                <h3>🎯 Сложные задачи</h3>
+                                <p>Продвинутые задания</p>
+                            </div>  </div> 
+
+                        <!-- Онлайн компилятор -->
+                        <div id="compiler-practice" class="practice-content active">
+                            <div class="compiler-container">
+                                <div class="compiler-header">
+                                    <h3>Онлайн компилятор PHP</h3>
+                                    <div class="compiler-controls">
+                                        <button id="run-code" class="btn btn-primary">▶ Запустить код</button>
+                                        <button id="clear-code" class="btn btn-outline">🗑️ Очистить</button>
+                                        <button id="save-code" class="btn btn-success">💾 Сохранить</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="code-editor-container">
+                                    <div class="editor-section">
+                                        <h4>Редактор кода:</h4>
+                                        <textarea id="php-code" class="code-editor" placeholder="Введите ваш PHP код здесь...">&lt;?php
+// Напишите ваш код здесь
+echo "Привет, мир!";
+?&gt;</textarea>
+                                    </div>
+                                    
+                                    <div class="output-section">
+                                        <h4>Результат выполнения:</h4>
+                                        <div id="output" class="output-container">
+                                            <div class="output-placeholder">Результат появится здесь после запуска кода...</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="compiler-features">
+                                    <h4>Примеры кода:</h4>
+                                    <div class="code-examples">
+                                        <button class="code-example-btn" data-example="variables">Переменные</button>
+                                        <button class="code-example-btn" data-example="conditions">Условия</button>
+                                        <button class="code-example-btn" data-example="loops">Циклы</button>
+                                        <button class="code-example-btn" data-example="functions">Функции</button>
+                                        <button class="code-example-btn" data-example="arrays">Массивы</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Интерактивные задания -->
+                        <div id="exercises-practice" class="practice-content">
+                            <div class="exercises-container">
+                                <h3>Интерактивные задания</h3>
+                                <div class="exercises-list">
+                                    <div class="exercise-card" data-exercise="1">
+                                        <div class="exercise-header">
+                                            <span class="difficulty easy">Легко</span>
+                                            <span class="exercise-status pending">⏳ Не начато</span>
+                                        </div>
+                                        <h4>Задание 1: Приветствие</h4>
+                                        <p>Напишите функцию, которая принимает имя и возвращает приветствие.</p>
+                                        <div class="exercise-task">
+                                            <strong>Задача:</strong> Создайте функцию <code>greet($name)</code>, которая возвращает строку "Привет, [имя]!"
+                                        </div>
+                                        <div class="exercise-editor"><textarea class="exercise-code" data-exercise="1">&lt;?php
+function greet($name) {
+    // Ваш код здесь
+    
+}
+?&gt;</textarea>
+                                            <button class="btn btn-primary test-exercise" data-exercise="1">Проверить решение</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="exercise-card" data-exercise="2">
+                                        <div class="exercise-header">
+                                            <span class="difficulty easy">Легко</span>
+                                            <span class="exercise-status pending">⏳ Не начато</span>
+                                        </div>
+                                        <h4>Задание 2: Сумма чисел</h4>
+                                        <p>Напишите функцию для сложения двух чисел.</p>
+                                        <div class="exercise-task">
+                                            <strong>Задача:</strong> Создайте функцию <code>sum($a, $b)</code>, которая возвращает сумму двух чисел
+                                        </div>
+                                        <div class="exercise-editor">
+                                            <textarea class="exercise-code" data-exercise="2">&lt;?php
+function sum($a, $b) {
+    // Ваш код здесь
+    
+}
+?&gt;</textarea>
+                                            <button class="btn btn-primary test-exercise" data-exercise="2">Проверить решение</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="exercise-card" data-exercise="3">
+                                        <div class="exercise-header">
+                                            <span class="difficulty medium">Средне</span>
+                                            <span class="exercise-status pending">⏳ Не начато</span>
+                                        </div>
+                                        <h4>Задание 3: Четные числа</h4>
+                                        <p>Напишите функцию для проверки четности числа.</p>
+                                        <div class="exercise-task">
+                                            <strong>Задача:</strong> Создайте функцию <code>isEven($number)</code>, которая возвращает true если число четное, и false если нечетное
+                                        </div>
+                                        <div class="exercise-editor">
+                                            <textarea class="exercise-code" data-exercise="3">&lt;?php
+function isEven($number) {
+    // Ваш код здесь
+    
+}
+?&gt;</textarea>
+                                            <button class="btn btn-primary test-exercise" data-exercise="3">Проверить решение</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Сложные задачи -->
+                        <div id="challenges-practice" class="practice-content">
+                            <div class="challenges-container">
+                                <h3>Сложные задачи</h3>
+                                <div class="challenges-list">
+                                    <div class="challenge-card" data-challenge="1">
+                                        <div class="challenge-header">
+                                            <span class="difficulty hard">Сложно</span>
+                                            <span class="challenge-points">★ 50 очков</span>
+                                        </div>
+                                        <h4>Задача: Калькулятор</h4>
+                                        <p>Создайте калькулятор с базовыми операциями.</p>
+                                        <div class="challenge-task">
+                                            <strong>Требования:</strong>
+                                            <ul>
+                                                <li>Функция <code>calculate($a, $b, $operation)</code></li>
+                                                <li>Поддерживаемые операции: +, -, *, /</li>
+                                                <li>Обработка деления на ноль</li>
+                                                <li>Валидация входных данных</li>
+                                            </ul>
+                                        </div>
+                                        <div class="challenge-editor">
+                                            <textarea class="challenge-code" data-challenge="1">&lt;?php
+function calculate($a, $b, $operation) {
+    // Реализуйте калькулятор
+    
+}
+?&gt;</textarea>
+                                            <button class="btn btn-primary test-challenge" data-challenge="1">Проверить решение</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Раздел прогресса -->
+                <section id="progress" class="content-section">
+                    <div class="progress-container">
+                        <h2>Ваш прогресс обучения</h2>
+                        
+                        <div class="progress-stats">
+                            <div class="stat-card">
+                                <h3>Пройдено уроков</h3>
+                                <div class="stat-value" id="lessons-completed">0</div>
+                                <div class="stat-max">из 6</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Средний результат тестов</h3>
+                                <div class="stat-value" id="avg-score">0%</div>
+                                <div class="stat-label">по всем тестам</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Время обучения</h3>
+                                <div class="stat-value" id="study-time">0ч</div>
+                                <div class="stat-label">общее время</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Выполнено заданий</h3>
+                                <div class="stat-value" id="exercises-completed">0</div>
+                                <div class="stat-label">из 4</div>
+                            </div>
+                        </div>
+
+                        <div class="progress-charts">
+                            <div class="chart-container">
+                                <h3>Прогресс по урокам</h3>
+                                <div class="lessons-progress" id="lessons-progress">
+                                    <!-- Прогресс бар для каждого урока -->
+                                </div>
+                            </div>
+                            
+                            <div class="chart-container"> <br>
+                                <h3>Результаты тестов</h3>
+                                <div class="tests-results" id="tests-results">
+                                    <!-- Результаты тестов -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="exercise-progress">
+                            <div class="progress-circle">
+                                <div class="progress-text" id="overall-progress">0%</div>
+                            </div>
+                            <div class="progress-stats">
+                                <h4>Общий прогресс</h4>
+                                <div class="progress-bar-small"><div class="progress-fill-small" id="overall-progress-bar" style="width: 0%"></div>
+                                </div>
+                                <p>Пройдено <span id="total-completed">0</span> из <span id="total-tasks">10</span> заданий</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Раздел профиля -->
+                <section id="profile" class="content-section">
+                    <div class="profile-container">
+                        <h2>Настройки профиля</h2>
+                        
+                        <div class="profile-info">
+                            <div class="avatar-section">
+                                <div class="avatar">👤</div>
+                               <!-- <button class="btn btn-outline">Сменить аватар</button>-->
+                            </div>  
+                            
+                            <div class="profile-form">
+                                <div class="form-group">
+                                    <label for="profile-name">Имя:</label>
+                                    <input type="text" id="profile-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-email">Email:</label>
+                                    <input type="email" id="profile-email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-password">Новый пароль:</label>
+                                    <input type="password" id="profile-password" placeholder="Оставьте пустым, если не меняется">
+                                </div>
+                                <button class="btn btn-primary" id="save-profile">Сохранить изменения</button>
+                            </div>
+                        </div>
+    
+                        <div class="achievements">
+                            <h3>Достижения</h3>
+                            <div class="achievements-grid">
+                                <div class="achievement locked" id="achievement-1">
+                                    <div class="achievement-icon">📚</div>
+                                    <h4>Первый урок</h4>
+                                    <p>Пройдите первый урок</p>
+                                </div>
+                                <div class="achievement locked" id="achievement-2">
+                                    <div class="achievement-icon">🎯</div>
+                                    <h4>Отличник</h4>
+                                    <p>Получите 100% в тесте</p>
+                                </div>
+                                <div class="achievement locked" id="achievement-3">
+                                    <div class="achievement-icon">⚡</div>
+                                    <h4>Скоростник</h4>
+                                    <p>Пройдите 3 урока за день</p>
+                                </div>
+                                <div class="achievement locked" id="achievement-4">
+                                    <div class="achievement-icon">💪</div>
+                                    <h4>Практик</h4>
+                                    <p>Выполните все задания</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Модальное окно теста -->
+    <div id="test-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Содержимое теста -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
